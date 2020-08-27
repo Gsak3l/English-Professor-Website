@@ -1,4 +1,26 @@
 @charset "UTF-8";
+
+.two {
+  transition: all 2s ease-in-out 0.5s;
+  -webkit-transition: all 2s ease-in-out 0.5s;
+}
+#scale {
+  height: 150px;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+}
+#scale {
+  fill: yellow;
+  stroke: blue;
+  stroke-width: 2px;
+}
+.grow:hover {
+  transform: scale(2.0);
+  -ms-transform: scale(2.0);
+  -webkit-transform: scale(2.0);
+}
+
 /*------------------------------------
     #MAIN
 \*------------------------------------*/
