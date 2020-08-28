@@ -5,20 +5,17 @@
   -webkit-transition: all 2s ease-in-out 0.5s;
 }
 #scale {
-  height: 150px;
-  width: 100px;
+  height: 350px;
+  width: 350px;
   text-align: center;
   margin: 0 auto;
+  transform: scale(-9);
 }
 #scale {
   fill: yellow;
   stroke: blue;
   stroke-width: 2px;
-}
-.grow:hover {
   transform: scale(2.0);
-  -ms-transform: scale(2.0);
-  -webkit-transform: scale(2.0);
 }
 
 /*------------------------------------
