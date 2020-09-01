@@ -1,25 +1,30 @@
 function initMap() {
 
-  var styleArray = [
-    {
-      featureType: "all",
-      stylers: [
-        { saturation: -100 }
-      ]
-    }
-  ];
+  var styleArray = [{
+    featureType: "all",
+    stylers: [{
+      saturation: -100
+    }]
+  }];
 
   var mapDiv = document.getElementById('contact-map');
   if (!mapDiv) return;
 
-  var LatLng = {lat: 41.75417838733706, lng: 13.4270923662109};
-  var LatLngMarker = {lat: 41.85245379736374, lng: 14.029280476562462};
+  var LatLng = {
+    lat: 40.660169,
+    lng: 22.989032
+  };
+  var LatLngMarker = {
+    lat: 40.662891,
+    lng: 22.990664
+  };
 
-  var styledMap = new google.maps.StyledMapType(styleArray,
-    {name: "Styled Map"});
+  var styledMap = new google.maps.StyledMapType(styleArray, {
+    name: "Styled Map"
+  });
 
   var map = new google.maps.Map(mapDiv, {
-    zoom: 10,
+    zoom: 15,
     center: LatLng,
     mapTypeControlOptions: {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
@@ -41,4 +46,5 @@ function initMap() {
   //Associate the styled map with the MapTypeId and set it to display.
   map.mapTypes.set('map_style', styledMap);
   map.setMapTypeId('map_style');
+  marker.setMap(map)
 }
