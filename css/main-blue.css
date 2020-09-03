@@ -10304,3 +10304,7 @@ iframe {
   box-shadow: 4px 4px #2066a1;
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=.2);
 }
+
+#red-telephone {
+  border: 0.01px solid #2066a1;
+}
