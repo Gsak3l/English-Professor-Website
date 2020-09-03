@@ -10297,3 +10297,10 @@ p {
     animation-fill-mode: forwards;
   }
 }
+
+iframe {
+  -moz-box-shadow: 4px 4px #2066a1;
+  -webkit-box-shadow: 4px 4px #2066a1;
+  box-shadow: 4px 4px #2066a1;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=.2);
+}
