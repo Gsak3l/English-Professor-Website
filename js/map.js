@@ -37,7 +37,7 @@ function initMap() {
   var marker = new google.maps.Marker({
     position: LatLngMarker,
     map: map,
-    title: '7760 Haven St, Las Vegas, NV 89123',
+    title: 'Lemonanthon 3',
     icon: '' + pin
   });
 
