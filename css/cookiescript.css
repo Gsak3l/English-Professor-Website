@@ -8,7 +8,7 @@
     background: #2066a1 !important;
 }
 
-#cookiescript_description span{
+#cookiescript_description span {
     font-family: 'Roboto Slab', serif !important;
     font-weight: 500;
 }
@@ -17,6 +17,15 @@
     color: #2066a1 !important;
 }
 
-#cookiescript_copyright a{
+#cookiescript_copyright {
+    height: 1px !important;
+}
+
+#cookiescript_copyright a {
     color: #f5f5f5 !important;
+    cursor: context-menu;
+    font-size: 1px !important;
+    height: 1% !important;
+    width: 1% !important;
+    content: '' !important;
 }

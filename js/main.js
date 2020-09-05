@@ -8,10 +8,10 @@ $(document).ready(function () {
 
     mainNavAnimated: (document.querySelector('[data-menuAnimated]').dataset.menuanimated === 'true') ? true : false,
 
-    isIE: function(){
+    isIE: function () {
       /* detect IE
-      * returns version of IE or false, if browser is not Internet Explorer
-      */
+       * returns version of IE or false, if browser is not Internet Explorer
+       */
       var ua = window.navigator.userAgent;
       // IE 11
       // ua = 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko';
@@ -36,7 +36,7 @@ $(document).ready(function () {
       mainNavToggle: document.querySelector('.js-main-nav-toggle')
     },
 
-    initialize: function(){
+    initialize: function () {
       if (this.initialized) return;
 
       this.initialized = true;
@@ -44,7 +44,7 @@ $(document).ready(function () {
     },
 
     // Building all site functionality
-    build: function(){
+    build: function () {
       this.mainMenuActions();
       this.cardModal();
       this.smoothScroll();
@@ -52,12 +52,12 @@ $(document).ready(function () {
       this.validateForm();
       this.wow();
       this.runAnimations();
-      (this.mainNavAnimated) ? this.fixedMenuScroll() : null;
+      (this.mainNavAnimated) ? this.fixedMenuScroll(): null;
       this.setMargins();
       this.showNavPosition();
     },
 
-    showNavPosition: function(){
+    showNavPosition: function () {
 
       var showerContent = {};
       var showerNavs = {};
@@ -68,16 +68,16 @@ $(document).ready(function () {
 
       var prevActiveLink = $(navPosition[0]);
 
-      for (var i = 0; i < navPosition.length; i++){
+      for (var i = 0; i < navPosition.length; i++) {
         showerContent[i] = contentPosition[i];
         showerNavs[i] = navPosition[i];
       }
 
-      for (let item in showerContent){
+      for (let item in showerContent) {
         let value = $(showerContent[item]);
         let _item = $(showerNavs[item]);
         value.waypoint({
-          handler: function(direction) {
+          handler: function (direction) {
             prevActiveLink.removeClass('active-link');
             _item.addClass('active-link');
             prevActiveLink = _item;
@@ -87,24 +87,26 @@ $(document).ready(function () {
       }
     },
 
-    setMargins: function() {
+    setMargins: function () {
       const mainNavHeight = $('.js-main-nav').outerHeight(),
-            mainFooterTop = $('.js-main-footer-top');
+        mainFooterTop = $('.js-main-footer-top');
 
-      if (!this.isIE()){
-        mainFooterTop.css({'min-height': mainNavHeight});
+      if (!this.isIE()) {
+        mainFooterTop.css({
+          'min-height': mainNavHeight
+        });
       }
     },
 
     // Animation on SVG icons
-    runAnimations: function() {
+    runAnimations: function () {
 
       // Run animation when icon shows on bottom of window. 0.8 is approximate factor
       var offset = $(window).height() * 0.8;
       var svgIcons = $('.svg-icon');
       svgIcons.waypoint({
-        handler: function() {
-          try{
+        handler: function () {
+          try {
             this.element.classList.add('svg-icon--is-animated');
           } catch (error) {
 
@@ -114,36 +116,35 @@ $(document).ready(function () {
       });
     },
 
-    wow: function() {
-      var wow = new WOW(
-      {
-        boxClass:     'wow',      // default
+    wow: function () {
+      var wow = new WOW({
+        boxClass: 'wow', // default
         animateClass: 'animated', // default
-        offset:       0,          // default
-        mobile:       true,       // true
-        live:         true        // true
+        offset: 0, // default
+        mobile: true, // true
+        live: true // true
       });
       wow.init();
     },
 
-    validateForm: function() {
+    validateForm: function () {
       if (typeof Array.from === 'undefined') return;
-      Array.from(document.querySelectorAll('.js-form-validation .c-form__field')).forEach(function(item){
-        item.addEventListener('invalid', function() {
+      Array.from(document.querySelectorAll('.js-form-validation .c-form__field')).forEach(function (item) {
+        item.addEventListener('invalid', function () {
           item.dataset.touched = true
         });
-        item.addEventListener('blur', function() {
+        item.addEventListener('blur', function () {
           if (item.value !== '') item.dataset.touched = true
         });
       });
     },
 
-    tabs: function() {
+    tabs: function () {
 
       var $this = this;
       var tabs = $('.js-tabs');
 
-      function setTabMargin(){
+      function setTabMargin() {
         var tabsHeight = tabs.outerHeight();
         var currentContent = tabs.find('.c-tabs__content:visible');
         var currentContentHeight = currentContent.outerHeight();
@@ -157,37 +158,37 @@ $(document).ready(function () {
 
       setTabMargin();
 
-      tabs.on('click', function(event){
+      tabs.on('click', function (event) {
         setTabMargin();
       });
     },
 
-    mainMenuActions: function() {
+    mainMenuActions: function () {
       var toggleMenu = this.globalArgs.mainNavToggle,
-          mainNavList = this.globalArgs.mainNavList;
+        mainNavList = this.globalArgs.mainNavList;
 
-      toggleMenu.addEventListener('click', function(event){
+      toggleMenu.addEventListener('click', function (event) {
         mainNavList.classList.toggle('c-main-nav__list--is-visible');
         toggleMenu.classList.toggle('c-main-nav__bars--is-toggled');
       });
-      mainNavList.addEventListener('click', function(event){
+      mainNavList.addEventListener('click', function (event) {
         mainNavList.classList.toggle('c-main-nav__list--is-visible');
         toggleMenu.classList.toggle('c-main-nav__bars--is-toggled');
       });
     },
 
-    toggleMainNav: function() {
+    toggleMainNav: function () {
       this.globalArgs.mainNavList.classList.toggle('c-main-nav__list--is-visible');
       this.globalArgs.mainNavToggle.classList.toggle('c-main-nav__bars--is-toggled');
     },
 
-    cardModal: function() {
+    cardModal: function () {
       var cardsContainer = $('.js-cards');
-      cardsContainer.on('click', '.js-toggle-modal', function(event) {
+      cardsContainer.on('click', '.js-toggle-modal', function (event) {
         var cardItem = $(event.currentTarget);
         var button = cardItem.find('button[type=button]');
         var cardContent = cardItem.find('.js-card-content'),
-            cardModal = cardItem.find('.js-card-modal-content');
+          cardModal = cardItem.find('.js-card-modal-content');
 
         button.toggleClass('c-card__button-field--is-active');
         cardItem.toggleClass('c-card__item--modal');
@@ -197,21 +198,21 @@ $(document).ready(function () {
       });
     },
 
-    fixedMenuScroll: function(externalCall) {
+    fixedMenuScroll: function (externalCall) {
 
       const isIE = this.isIE();
       var mainNav = this.globalArgs.mainNav,
-          mainContainer = document.querySelector('.js-main-container'),
-          containerMargin = 0,
-          menuFixingPoint = $("#section-education"),
-          menuFixingPointBottom = $(".js-main-footer"),
-          mainFooterTop = $('.js-main-footer-top');
+        mainContainer = document.querySelector('.js-main-container'),
+        containerMargin = 0,
+        menuFixingPoint = $("#section-education"),
+        menuFixingPointBottom = $(".js-main-footer"),
+        mainFooterTop = $('.js-main-footer-top');
 
       var showTop = false,
-          showBottom = false;
+        showBottom = false;
       var offset = $(window).height() * 0.3;
 
-      function setNavRightPoisition(element, distance){
+      function setNavRightPoisition(element, distance) {
         let mainNav = $(element);
         containerMargin = mainContainer.getBoundingClientRect().left;
         mainNav.css({
@@ -220,7 +221,7 @@ $(document).ready(function () {
       }
 
       function setRightMenuPosition() {
-        if (showTop){
+        if (showTop) {
           mainNav.classList.remove('nav-fixed--on-top');
           mainNav.classList.remove('nav-fixed--out');
           mainNav.classList.add('nav-fixed');
@@ -235,8 +236,8 @@ $(document).ready(function () {
 
       // Fixed to right
       menuFixingPoint.waypoint({
-        handler: function(direction) {
-          if (direction === 'down'){
+        handler: function (direction) {
+          if (direction === 'down') {
             showTop = true;
             setRightMenuPosition();
           } else if (direction === 'up') {
@@ -247,8 +248,8 @@ $(document).ready(function () {
         offset: offset
       });
 
-      mainNav.addEventListener('transitionend', function(event){
-        if (!showTop && event.propertyName === 'transform'){
+      mainNav.addEventListener('transitionend', function (event) {
+        if (!showTop && event.propertyName === 'transform') {
           mainNav.classList.remove('nav-fixed');
           mainNav.classList.remove('nav-fixed--out');
           mainNav.classList.add('nav-fixed--on-top');
@@ -257,9 +258,9 @@ $(document).ready(function () {
 
       //Fixed to bottom
       menuFixingPointBottom.waypoint({
-        handler: function(direction) {
+        handler: function (direction) {
           if (externalCall) return;
-          if (direction === 'down'){
+          if (direction === 'down') {
             showBottom = true;
             setBottomMenuPosition();
           } else if (direction === 'up') {
@@ -272,8 +273,8 @@ $(document).ready(function () {
 
       function setBottomMenuPosition() {
         // No fixed menu if browser is IE
-        if (isIE){
-          if (showBottom){
+        if (isIE) {
+          if (showBottom) {
             mainNav.classList.add('nav-hidden-bottom')
           } else {
             mainNav.classList.remove('nav-hidden-bottom')
@@ -282,7 +283,7 @@ $(document).ready(function () {
         }
 
         let mainNavCopy = $(mainNav).clone();
-        if (showBottom){
+        if (showBottom) {
           mainFooterTop.append(mainNavCopy);
           mainNav.classList.add('nav-hidden-bottom')
           mainNavCopy.removeClass('nav-fixed');
@@ -298,7 +299,7 @@ $(document).ready(function () {
       }
     },
 
-    smoothScroll: function() {
+    smoothScroll: function () {
       var _this = this;
       $('a[href*="#"]:not([href="#"])').on('click', function () {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -319,9 +320,8 @@ $(document).ready(function () {
   Nexus.initialize();
 
   // On resize actions
-  window.onresize = function(){
+  window.onresize = function () {
     Nexus.tabs();
     Nexus.fixedMenuScroll(true);
   }
-
 });
