@@ -1,0 +1,22 @@
+#cookiescript_injected {
+    font-family: 'Roboto Slab', serif !important;
+    background: #f5f5f5 !important;
+}
+
+#cookiescript_accept {
+    font-family: 'Roboto Slab', serif !important;
+    background: #2066a1 !important;
+}
+
+#cookiescript_description span{
+    font-family: 'Roboto Slab', serif !important;
+    font-weight: 500;
+}
+
+#cookiescript_readmore:hover {
+    color: #2066a1 !important;
+}
+
+#cookiescript_copyright a{
+    color: #f5f5f5 !important;
+}
