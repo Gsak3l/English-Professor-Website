@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bootstrap Simple Success Confirmation Popup</title>
+    <title>Θεόδωρος Μυλωνάς - Επιτυχία</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -12,105 +12,53 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            font-family: 'Varela Round', sans-serif;
-        }
 
-        .modal-confirm {
-            color: #636363;
-            width: 325px;
-            font-size: 14px;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <!--main styling-->
+    <link rel="stylesheet" href="css/main-blue.css" data-pin="img/icofont-location-pin--blue.png">
+    <!--cookie script-->
+    <link rel="stylesheet" href="css/cookiescript.css" data-pin="img/icofont-location-pin--blue.png">
+    <!--mailpage css-->
+    <link rel="stylesheet" href="css/mailpage.css" data-pin="img/icofont-location-pin--blue.png">
 
-        .modal-confirm .modal-content {
-            padding: 20px;
-            border-radius: 5px;
-            border: none;
-        }
 
-        .modal-confirm .modal-header {
-            border-bottom: none;
-            position: relative;
-        }
-
-        .modal-confirm h4 {
-            text-align: center;
-            font-size: 26px;
-            margin: 30px 0 -15px;
-        }
-
-        .modal-confirm .form-control,
-        .modal-confirm .btn {
-            min-height: 40px;
-            border-radius: 3px;
-        }
-
-        .modal-confirm .close {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-        }
-
-        .modal-confirm .modal-footer {
-            border: none;
-            text-align: center;
-            border-radius: 5px;
-            font-size: 13px;
-        }
-
-        .modal-confirm .icon-box {
-            color: #fff;
-            position: absolute;
-            margin: 0 auto;
-            left: 0;
-            right: 0;
-            top: -70px;
-            width: 95px;
-            height: 95px;
-            border-radius: 50%;
-            z-index: 9;
-            background: #82ce34;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .modal-confirm .icon-box i {
-            font-size: 58px;
-            position: relative;
-            top: 3px;
-        }
-
-        .modal-confirm.modal-dialog {
-            margin-top: 80px;
-        }
-
-        .modal-confirm .btn {
-            color: #fff;
-            border-radius: 4px;
-            background: #82ce34;
-            text-decoration: none;
-            transition: all 0.4s;
-            line-height: normal;
-            border: none;
-        }
-
-        .modal-confirm .btn:hover,
-        .modal-confirm .btn:focus {
-            background: #6fb32b;
-            outline: none;
-        }
-
-        .trigger-btn {
-            display: inline-block;
-            margin: 100px auto;
-        }
-    </style>
 </head>
 
 <body>
+    <link rel="stylesheet" href="css/main-blue.css" data-pin="img/icofont-location-pin--blue.png">
 
+    <header class="c-main-header">
+        <div class="o-container">
+
+            <!-- NAVIGATION -->
+            <div class="c-main-header__nav-wrapper" data-menuAnimated="true">
+                <nav class="c-main-nav js-main-nav">
+                    <ul class="c-main-nav__list nav-fixed--is-active js-main-nav__list">
+                        <li class="c-main-nav__item"><a href="./index.html#section-about" class="c-main-nav__link"
+                                data-navPosition="1"><span>01_</span>about</a></li>
+                        <li class="c-main-nav__item"><a href="./index.html#section-education" class="c-main-nav__link"
+                                data-navPosition="2"><span>02_</span>education</a></li>
+                        <li class="c-main-nav__item"><a href="./index.html#section-certificates"
+                                class="c-main-nav__link" data-navPosition="3"><span>03_</span>certificates</a></li>
+                        <!-- <li class="c-main-nav__item"><a href="#section-publications" class="c-main-nav__link"
+                    data-navPosition="4"><span>04_</span>publications</a></li> -->
+                        <li class="c-main-nav__item"><a href="./index.html#section-teaching" class="c-main-nav__link"
+                                data-navPosition="5"><span>04_</span>teaching</a></li>
+                        <li class="c-main-nav__item"><a href="./index.html#section-contacts" class="c-main-nav__link"
+                                data-navPosition="6"><span>05_</span>contacts</a></li>
+                    </ul>
+                    <div class="c-main-nav__bars js-main-nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+            <!-- NAVIGATION END -->
+
+
+        </div>
+    </header>
 
     <!-- Modal HTML -->
     <div id="myModal" style="padding-top: 100px;">
@@ -124,8 +72,8 @@
                 <div class="modal-body text-center">
                     <h4>Τέλεια!</h4>
                     <br>
-                    <p>Το email σας στάλθηκε με επιτυχία</p>
-                    <a href="index.html">
+                    <p style="padding-bottom: 20px;">Το email σας στάλθηκε με επιτυχία</p>
+                    <a href="./index.html">
                         <button class="btn btn-success" data-dismiss="modal"><span>Επιστροφή</span>
                         </button>
                     </a>
@@ -133,6 +81,27 @@
             </div>
         </div>
     </div>
+
+
+    <footer class="c-main-footer js-main-footer">
+        <!-- <div id="contact-map" class="c-main-footer__map"> -->
+        <div class="c-main-footer__bottom js-main-footer-bottom">
+            <p class="c-main-footer__text">© 2020 Theodoros Milonas. All Rights Reserved</p>
+        </div>
+    </footer>
+
+
+    <!--Start Cookie Script-->
+    <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/55d6bbd0ed1206201cddc3133e4d9526.js">
+    </script>
+    <!--End Cookie Script-->
+
+    <script src="components/jquery.min.js"></script>
+    <script src="components/wow.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/inview.min.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
 
 </html>
