@@ -325,3 +325,18 @@ $(document).ready(function () {
     Nexus.fixedMenuScroll(true);
   }
 });
+
+// Changing Backgrounds on Load
+var bgArray = [
+  '../img/asfalt-dark-.png',
+  '../img/black-thread-light.png',
+  '../img/brick-wall.png',
+  '../img/brilliant.png',
+  '../img/checkered-pattern.png',
+  '../img/connected.png',
+  '../img/corrugation.png',
+  '../img/hero-pattern.png'
+]
+
+document.getElementById('main-header').style.backgroundImage = 'url(' +
+  bgArray[Math.floor(Math.random() * bgArray.length)] + ')';
