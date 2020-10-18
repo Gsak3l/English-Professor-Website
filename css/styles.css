@@ -82,5 +82,9 @@
 
 /*CONTACT*/
 #section-contacts {
-  margin-top: 300px;
+  margin-top: 400px;
+}
+
+.rbd-core-ui {
+  margin-top: -20px;
 }
